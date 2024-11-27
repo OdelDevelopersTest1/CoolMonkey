@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: coolmonkey
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: NEXT_PUBLIC_ADMIN_INITIAL_PASSWORD
+        sync: false
+      - key: NEXT_PUBLIC_ADMIN_KEY
+        sync: false
+      - key: NODE_ENV
+        value: production
